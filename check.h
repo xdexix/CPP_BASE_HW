@@ -9,7 +9,7 @@ float floatChk(float ch)
 		std::cin.clear(); 
 		std::cin.ignore(100, '\n');
 		std::cin.sync();
-		std::cout << "Íåêîğğåêòíîå ÷èñëî! Ïîïğîáóéòå åùå ğàç: ";
+		std::cout << "ĞĞµĞºĞ¾Ñ€Ñ€ĞµĞºÑ‚Ğ½Ğ¾Ğµ Ñ‡Ğ¸ÑĞ»Ğ¾! ĞŸĞ¾Ğ¿Ñ€Ğ¾Ğ±ÑƒĞ¹Ñ‚Ğµ ĞµÑ‰Ğµ Ñ€Ğ°Ğ·: ";
 		std::cin >> ch; 
 	}
 	return ch;
@@ -22,7 +22,7 @@ int intChk(int ch)
 		std::cin.clear();
 		std::cin.ignore(100, '\n');
 		std::cin.sync();
-		std::cout << "Íåêîğğåêòíîå ÷èñëî! Ïîïğîáóéòå åùå ğàç: ";
+		std::cout << "ĞĞµĞºĞ¾Ñ€Ñ€ĞµĞºÑ‚Ğ½Ğ¾Ğµ Ñ‡Ğ¸ÑĞ»Ğ¾! ĞŸĞ¾Ğ¿Ñ€Ğ¾Ğ±ÑƒĞ¹Ñ‚Ğµ ĞµÑ‰Ğµ Ñ€Ğ°Ğ·: ";
 		std::cin >> ch;
 	}
 	return ch;
