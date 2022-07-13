@@ -1,0 +1,116 @@
+#include <algorithm>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+#include "check.h"
+
+//-----------------------------------------------------//
+//task 1 конвертер валют
+//-----------------------------------------------------//
+
+int main() {
+    string m1, m2;
+    float count, result;
+
+    cout << "Конвертер валют.\n\nВыберите валюту какую вы хотите перевести (RU, EU, US): ";
+    cin >> m1; m1 = strChk(m1);
+    cout << "Введите количество для конвертации: ";
+    cin >> count;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore(100, '\n');
+        cin.sync();
+        cout << "Некорректное значение! Введите число (дробь отделяется точкой):  ";
+        cin >> count;
+    }
+    cout << "Выберите валюту в которую вы хотите перевести (RU, EU, US): ";
+    cin >> m2; m2 = strChk(m2);
+    if (m1 == "RU")
+    {
+        if (m2 == "EU")
+            result = count * 0.012;
+        if (m2 == "US")
+            result = count * 0.014;
+    }
+    if (m1 == "EU")
+    {
+        if (m2 == "RU")
+            result = count * 83.45;
+        if (m2 == "US")
+            result = count * 1.16;
+    }
+    if (m1 == "US")
+    {
+        if (m2 == "RU")
+            result = count * 71.97;
+        if (m2 == "EU")
+            result = count * 0.86;
+    }
+    cout << "\nВаш превод " << m1 << " в " << m2 << " равен: " << result;
+    system("pause");
+}
+
+//-----------------------------------------------------//
+//task 2 викторина
+//-----------------------------------------------------//
+
+//int main()
+//{
+//    short answer, right_answers;
+//    right_answers = 0;
+//
+//    struct Quiz
+//    {
+//        short correct_answer;
+//        string question;
+//        string answer_1;
+//        string answer_2;
+//        string answer_3;
+//        string answer_4;
+//    };
+//
+//    Quiz first_question = {2, "\nСколько раз в сутки подзаводят куранты Спасской башни Кремля?\n",
+//          "1. Один\n", "2. Два\n", "3. Три\n", "4. Четыре\n"};
+//    Quiz second_question = {3, "\nКто 1-м получил Нобелевскую премию по литературе?\n",
+//          "1. Романист\n", "2. Драматург\n", "3. Поэт\n", "4. Эссеист\n"};
+//    Quiz third_question = {1, "\nС какой буквы начинаются слова, опубликованные в 16-м томе последнего издания Большой советской энциклопедии?\n",
+//          "1. М\n", "2. Н\n", "3. О\n", "4. П\n"};
+//    Quiz fourth_question = {3, "\nКто из перечисленных был пажом во времена Екатерины II?\n",
+//          "1. Д.И. Фонвизин\n", "2. Г.Р. Державин\n", "3. А.Н. Радищев\n", "4. Н.М. Карамзин\n"};
+//
+//    cout << "Ответьте на 4 вопроса правильно и получите приз!\n";
+//    cout << first_question.question;
+//    cout << first_question.answer_1 << first_question.answer_2 << first_question.answer_3 << first_question.answer_4;
+//    cout << "Ваш ответ: ";
+//    cin >> answer; answer = shortChk(answer);
+//    if (answer == first_question.correct_answer)
+//        right_answers += 1;
+//    cout << second_question.question;
+//    cout << second_question.answer_1 << second_question.answer_2 << second_question.answer_3 << second_question.answer_4;
+//    cout << "Ваш ответ: ";
+//    cin >> answer; answer = shortChk(answer);
+//    if (answer == second_question.correct_answer)
+//        right_answers += 1;
+//    cout << third_question.question;
+//    cout << third_question.answer_1 << third_question.answer_2 << third_question.answer_3 << third_question.answer_4;
+//    cout << "Ваш ответ: ";
+//    cin >> answer; answer = shortChk(answer);
+//    if (answer == third_question.correct_answer)
+//        right_answers += 1;
+//    cout << fourth_question.question;
+//    cout << fourth_question.answer_1 << fourth_question.answer_2 << fourth_question.answer_3 << fourth_question.answer_4;
+//    cout << "Ваш ответ: ";
+//    cin >> answer; answer = shortChk(answer);
+//    if (answer == fourth_question.correct_answer)
+//        right_answers += 1;
+//    if (right_answers == 4)
+//        cout << "\nПоздравляем! Вы выиграли! Вы получаете по башке";
+//    else
+//    {
+//        cout << "\nУвы, вы проиграли. Количество верных ответов: " << right_answers << "/4\n";
+//    }
+//    system("pause");
+//}
